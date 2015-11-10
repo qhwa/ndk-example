@@ -9,6 +9,11 @@ LOCAL_SRC_FILES := main.c
 LOCAL_LDLIBS    := -llog -landroid -lEGL -lGLESv1_CM
 LOCAL_STATIC_LIBRARIES := android_native_app_glue
 
-include $(BUILD_STATIC_LIBRARY)
+# prevent this error:
+# -- error: only position independent executables (PIE) are supported.
+LOCAL_CFLAGS  += -pie -fPIE
+LOCAL_LDFLAGS += -pie -fPIE
+
+include $(BUILD_EXECUTABLE)
 
 $(call import-module,android/native_app_glue)
