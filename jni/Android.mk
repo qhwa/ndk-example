@@ -4,7 +4,7 @@ LOCAL_PATH := src/c
 
 include $(CLEAR_VARS)
 
-LOCAL_MODULE    := native-activity
+LOCAL_MODULE    := hello_world
 LOCAL_SRC_FILES := main.c
 LOCAL_LDLIBS    := -llog -landroid -lEGL -lGLESv1_CM
 LOCAL_STATIC_LIBRARIES := android_native_app_glue
